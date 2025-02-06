@@ -1,8 +1,10 @@
 require("@nomicfoundation/hardhat-toolbox");
 require("dotenv").config();
+require("@nomiclabs/hardhat-etherscan");
 
 const SEPOLIA_RPC_URL = process.env.SEPOLIA_RPC_URL;
 const PRIVATE_KEY = process.env.PRIVATE_KEY;
+const API_KEY = process.env.API_KEY;
 
 /** @type import('hardhat/config').HardhatUserConfig */
 module.exports = {
@@ -15,4 +17,7 @@ module.exports = {
     },
   },
   solidity: "0.8.28",
+  etherscan: {
+    apikey: API_KEY,
+  },
 };
