@@ -16,6 +16,7 @@
     "ethers": "^6.4.0",
     "hardhat": "^2.22.18",
     "hardhat-gas-reporter": "^1.0.8",
+    "solhint": "^5.0.5",
     "solidity-coverage": "^0.8.14",
     "typechain": "^8.3.0"
   },
@@ -23,7 +24,7 @@
     "dotenv": "^16.4.7"
   },
   "scripts": {
-    "lint": "solhint 'contracts/**/*.sol'",
+    "lint": "solhint 'contracts/*.sol'",
     "lint:fix": "solhint 'contracts/**/*.sol' --fix"
   }
 }
