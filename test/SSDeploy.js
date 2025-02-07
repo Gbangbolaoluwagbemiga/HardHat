@@ -73,6 +73,12 @@ describe("SimpleStorage init", function () {
         const person = persons[i];
 
         expect(people.name).to.equal(person.name);
+
+        const nameToFavoriteNumber = await simplestorage.nameToFavoriteNumber(
+          person.name
+        );
+
+        expect(nameToFavoriteNumber).to.equal(person.age);
       }
     });
   });
