@@ -30,12 +30,25 @@ describe("SimpleStorage init", function () {
       const value = 17;
       const { simplestorage } = await loadFixture(getContract);
       const store = await simplestorage.store(value);
-      const retrieve = await simplestorage.retrieve();
       await store.wait();
+      const retrieve = await simplestorage.retrieve();
 
       expect(retrieve).to.equal(value);
     });
   });
 
-  d;
+  describe("Add person", function () {
+    it("adding favorite person", async () => {
+      const name = "phil";
+      const age = 17;
+
+      const { simplestorage } = await loadFixture(getContract);
+      const addPerson = await simplestorage.addPerson(name, age);
+      await addPerson.wait();
+
+      const personDetails = await simplestorage.people(0);
+
+      expect(personDetails.name).equal(name);
+    });
+  });
 });
