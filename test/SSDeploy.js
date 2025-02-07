@@ -50,5 +50,30 @@ describe("SimpleStorage init", function () {
 
       expect(personDetails.name).equal(name);
     });
+
+    it("Adding favorite persons array", async () => {
+      const persons = [
+        { name: "phil", age: 24 },
+        { name: "mom", age: 63 },
+        { name: "Ay", age: 38 },
+        { name: "Ibk", age: 39 },
+      ];
+      const { simplestorage } = await loadFixture(getContract);
+
+      for (const details of persons) {
+        const addPerson = await simplestorage.addPerson(
+          details.name,
+          details.age
+        );
+        await addPerson.wait();
+      }
+
+      for (let i = 0; i < persons.length; i++) {
+        const people = await simplestorage.people(i);
+        const person = persons[i];
+
+        expect(people.name).to.equal(person.name);
+      }
+    });
   });
 });
