@@ -1296,7 +1296,7 @@ __metadata:
     ethers: "npm:^6.4.0"
     hardhat: "npm:^2.22.18"
     hardhat-gas-reporter: "npm:^1.0.8"
-    solidity-coverage: "npm:^0.8.0"
+    solidity-coverage: "npm:^0.8.14"
     typechain: "npm:^8.3.0"
   languageName: unknown
   linkType: soft
@@ -4977,7 +4977,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"solidity-coverage@npm:^0.8.0":
+"solidity-coverage@npm:^0.8.14":
   version: 0.8.14
   resolution: "solidity-coverage@npm:0.8.14"
   dependencies:

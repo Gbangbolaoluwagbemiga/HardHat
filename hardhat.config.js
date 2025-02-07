@@ -2,6 +2,7 @@ require("@nomicfoundation/hardhat-toolbox");
 require("dotenv").config();
 // require("@nomiclabs/hardhat-etherscan");
 require("@nomicfoundation/hardhat-verify");
+require("solidity-coverage");
 
 const SEPOLIA_RPC_URL = process.env.SEPOLIA_RPC_URL;
 const PRIVATE_KEY = process.env.PRIVATE_KEY;
