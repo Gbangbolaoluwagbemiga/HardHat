@@ -1,3 +1,4 @@
+// import "hardhat/console.sol";
 const { ethers } = require("hardhat");
 const { assert, expect } = require("chai");
 const {
@@ -11,10 +12,19 @@ describe("SimpleStorage init", function () {
     const SimpleStorageFactory = await ethers.getContractFactory(
       "SimpleStorage"
     );
-    const simplestorage = await SimpleStorageFactory.deploy();
+    const simplestorage = await SimpleStorageFactory.deploy(17);
 
     return { owner, simplestorage };
   }
+  describe("Constructor", async function () {
+    it("constructor", async function () {
+      const value = 17;
+      const { simplestorage } = await loadFixture(getContract);
+      const initNo = await simplestorage.init();
+      console.log(`I am Amazed ${initNo}`);
+      expect(initNo).to.equal(value);
+    });
+  });
 
   describe("Deployment", function () {
     it("Calling retrieve function", async function () {

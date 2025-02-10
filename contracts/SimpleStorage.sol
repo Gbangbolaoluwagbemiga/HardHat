@@ -1,10 +1,6 @@
-// I'm a comment!
 // SPDX-License-Identifier: MIT
 
 pragma solidity ^0.8.8;
-
-// pragma solidity ^0.8.0;
-// pragma solidity >=0.8.0 <0.9.0;
 
 contract SimpleStorage {
     uint256 favoriteNumber;
@@ -14,8 +10,13 @@ contract SimpleStorage {
         string name;
     }
 
+    uint256 public init;
     // uint256[] public anArray;
     People[] public people;
+
+    constructor(uint256 _initNo) {
+        init = _initNo;
+    }
 
     mapping(string => uint256) public nameToFavoriteNumber;
 
